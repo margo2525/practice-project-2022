@@ -1,0 +1,102 @@
+.namingPlatformListContainer
+  max-width: 1100px
+  width: 100%
+  margin: 0 auto
+  
+  
+.namingPlatformList
+  box-sizing: border-box
+  display: flex
+  flex-wrap: wrap
+  margin: 60px auto
+  
+
+  li 
+    box-sizing: border-box
+    width: 25%
+    padding: 15px
+
+    @media screen and (max-width:850px)
+      width: 50%
+
+.namingPlatformArticle 
+  box-sizing: border-box 
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+  padding: 30px
+  box-shadow: 0 0 5px lightgrey
+  border-radius: 20px
+  height: 100
+
+  h3
+    margin: 0 0 10px 0
+    font-size: 33px
+    font-weight: 700
+
+  p
+    color: #666
+    font-size: 16px
+    font-weight: 500
+    min-height: 75px
+    margin: 0
+
+  span
+    display: block
+    width: 100%
+    text-align: right
+    font-size: 28px
+
+.namingPlatformArticle:hover
+  box-shadow: 0px 5px 5px 5px rgba(21, 21, 21, 0.476)
+
+.body
+  position: relative
+  max-width: 300px
+  font-size: 15px
+  font-weight: 500
+  padding: 13px 0
+  border-bottom: 2px solid #ddd
+
+  &:last-child
+    border-bottom: none  
+
+   
+  &::after,&::before
+    position: absolute
+    left: 100%
+    top: 50%
+    transform: translateY(-50%)
+    background: white
+    box-shadow: 0px 2px 5px grey
+    transition: 1s
+
+  &::after
+    content: attr(data-tooltip)  
+    padding: 20px
+    opacity: 0
+    z-index: 99
+
+  &:hover::after, &:hover::before
+    opacity: 1
+
+  &::before
+    content: ''
+    opacity: 0
+    z-index: 98
+    transform: translateX(-3px) rotateZ(45deg)
+    $size: 5px
+    width: $size
+    height: $size
+    
+.btn
+  display: block
+  width: 100%
+  font-weight: 700
+  font-size: 17px
+  line-height: 45px
+  border-radius: 5px
+  text-align: center
+  color: white
